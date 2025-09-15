@@ -86,7 +86,7 @@ function QR() {
 
   return (
     <div className="app">
-      <header>
+      {/* <header>
         <div className="logo">CompleteClarity QR Tool</div>
         <nav>
           <button
@@ -100,7 +100,7 @@ function QR() {
             Scan
           </button>
         </nav>
-      </header>
+      </header> */}
 
       <main>
         {tab === 'generate' && (
@@ -126,6 +126,18 @@ function QR() {
             <button className="primary-btn" onClick={handleGenerate}>
               Generate QR Code
             </button>
+            <div>
+              {/* banner-ad-cc */}
+              <h1>Banner Ad</h1>
+              <ins
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-2171200369103844"
+                data-ad-slot={6305799023}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
 
             <div className="qr-preview">
               {qrUrl ? (
@@ -153,7 +165,6 @@ function QR() {
 
         {tab === 'scan' && (
           <div className="scan-panel">
-            <video ref={videoRef} className="video-preview" playsInline />
             <div className="scan-controls">
               <button
                 className="primary-btn"
@@ -198,11 +209,6 @@ function QR() {
         )}
       </main>
 
-      <footer>
-        © 2025 CompleteClarity Web Tools. All rights reserved. | About | Privacy
-        | Contact
-      </footer>
-
       <style>{`
         * {
           box-sizing: border-box;
@@ -215,24 +221,19 @@ function QR() {
           display: flex; flex-direction: column;
           min-height: 100vh;
         }
-        .app {
-          max-width: 900px;
-          margin: 0 auto;
-          display: flex; flex-direction: column;
-          flex-grow: 1;
-          background: white;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-          overflow: hidden;
-        }
-        header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background: #2a3d66;
-          padding: 1rem 2rem;
-          color: white;
-        }
+       .app {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: white;
+  border-radius: 0; /* optional: remove rounded corners to fit edge */
+  box-shadow: none; /* optional: remove shadow for edge-to-edge look */
+  overflow: hidden;
+  padding: 1rem 2rem; /* add horizontal padding */
+}
+       
         .logo {
           font-weight: 600; font-size: 1.25rem;
         }
@@ -357,14 +358,7 @@ function QR() {
           width: 100%;
           max-width: 320px;
         }
-        footer {
-          background: #2a3d66;
-          color: white;
-          text-align: center;
-          padding: 1rem 2rem;
-          font-size: 0.875rem;
-          margin-top: auto;
-        }
+       
         @media (max-width: 600px) {
           main {
             padding: 1rem;
