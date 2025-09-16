@@ -17,6 +17,9 @@ const Footer = () => {
         <Link to="/text-to-speech" style={styles.link}>
           Text To Speech
         </Link>
+        <Link to="/unit-converter" style={styles.link}>
+          Unit Converter
+        </Link>
       </nav>
       <div style={styles.copy}>© 2025 CompleteClarity Web Tools</div>
     </footer>

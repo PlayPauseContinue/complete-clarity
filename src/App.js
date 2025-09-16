@@ -6,6 +6,7 @@ import QR from './components/QR';
 import Footer from './components/Footer';
 import ImageCompressor from './screens/ImageCompressor';
 import TextToSpeech from './screens/TextToSpeech';
+import UnitConverter from './screens/UnitConverter';
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/generate-qr" element={<QR />} />
           <Route path="/image-compressor" element={<ImageCompressor />} />
           <Route path="/text-to-speech" element={<TextToSpeech />} />
+          <Route path="/unit-converter" element={<UnitConverter />} />
         </Routes>
       </main>
       <Footer />

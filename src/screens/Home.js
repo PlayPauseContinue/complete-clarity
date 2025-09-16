@@ -3,6 +3,7 @@ import QR from '../components/QR';
 import ImageCompressor from '../screens/ImageCompressor'; // Adjust path as needed
 import Quotes from '../components/Quotes';
 import TextToSpeech from '../screens/TextToSpeech';
+import UnitConverter from '../screens/UnitConverter';
 
 const Home = () => {
   const [activeTool, setActiveTool] = useState(null);
@@ -16,6 +17,9 @@ const Home = () => {
   };
   const handleTextToSpeechClick = () => {
     setActiveTool('tts');
+  };
+  const handleUnitConverterClick = () => {
+    setActiveTool('unitConverter');
   };
 
   const handleComingSoonClick = () => {
@@ -31,6 +35,9 @@ const Home = () => {
   }
   if (activeTool === 'tts') {
     return <TextToSpeech />;
+  }
+  if (activeTool === 'unitConverter') {
+    return <UnitConverter />;
   }
 
   return (
@@ -50,6 +57,14 @@ const Home = () => {
           onClick={handleImageCompressorClick}>
           <h2 style={styles.cardTitle}>Image Compressor</h2>
           <p style={styles.cardDesc}>Reduce image size in KB and download.</p>
+        </div>
+        <div
+          style={{ ...styles.card, cursor: 'pointer' }}
+          onClick={handleUnitConverterClick}>
+          <h2 style={styles.cardTitle}>Unit Converter</h2>
+          <p style={styles.cardDesc}>
+            Convert length, weight, temperature, and more with ease
+          </p>
         </div>
         <div
           style={{ ...styles.card, cursor: 'pointer' }}
@@ -73,7 +88,7 @@ const Home = () => {
 const styles = {
   container: {
     padding: '2rem',
-    maxWidth: '900px',
+    // maxWidth: '900px',
     margin: '0 auto',
     color: '#2a3d66',
     textAlign: 'center',
@@ -83,7 +98,7 @@ const styles = {
   },
   cardContainer: {
     display: 'flex',
-    gap: '2rem',
+    gap: '1rem', // reduced gap for tighter layout
     justifyContent: 'center',
     flexWrap: 'wrap',
   },
@@ -91,17 +106,21 @@ const styles = {
     backgroundColor: '#f5f5f5',
     borderRadius: '10px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-    padding: '2rem',
-    width: '250px',
+    padding: '1.25rem', // reduced padding
+    width: '20%', // ~4 cards in a row, accounting for gap
+    minWidth: '180px', // responsive min width for small screens
+    boxSizing: 'border-box',
     transition: 'transform 0.3s, box-shadow 0.3s',
   },
   cardTitle: {
     marginTop: 0,
-    marginBottom: '0.5rem',
+    marginBottom: '0.3rem',
+    fontSize: '1.1rem', // smaller font size
   },
   cardDesc: {
     marginTop: 0,
     color: '#555',
+    fontSize: '0.9rem', // smaller font size
   },
 };
 
