@@ -11,6 +11,9 @@ const Footer = () => {
         <Link to="/generate-qr" style={styles.link}>
           Generate QR
         </Link>
+        <Link to="/image-compressor" style={styles.link}>
+          Image Size in KB
+        </Link>
       </nav>
       <div style={styles.copy}>© 2025 CompleteClarity Web Tools</div>
     </footer>

@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import QR from '../components/QR';
+import ImageCompressor from '../screens/ImageCompressor'; // Adjust path as needed
 
 const Home = () => {
-  const [showQR, setShowQR] = useState(false);
+  const [activeTool, setActiveTool] = useState(null);
 
   const handleGenerateClick = () => {
-    setShowQR(true);
+    setActiveTool('qr');
+  };
+
+  const handleImageCompressorClick = () => {
+    setActiveTool('compressor');
   };
 
   const handleComingSoonClick = () => {
     alert('This tool is coming soon!');
   };
 
-  if (showQR) {
+  if (activeTool === 'qr') {
     return <QR />;
+  }
+
+  if (activeTool === 'compressor') {
+    return <ImageCompressor />;
   }
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>
-        Welcome to CompleteClarity Free Online Tools
-      </h1>
+      <h1 style={styles.heading}>Free Online Tools</h1>
+      <h2>Unlimited Downloads. No Watermarks.</h2>
       <div style={styles.cardContainer}>
         <div
           style={{ ...styles.card, cursor: 'pointer' }}
@@ -28,7 +36,12 @@ const Home = () => {
           <h2 style={styles.cardTitle}>Generate QR Code</h2>
           <p style={styles.cardDesc}>Create custom QR codes instantly.</p>
         </div>
-
+        <div
+          style={{ ...styles.card, cursor: 'pointer' }}
+          onClick={handleImageCompressorClick}>
+          <h2 style={styles.cardTitle}>Image Compressor</h2>
+          <p style={styles.cardDesc}>Reduce image size in KB and download.</p>
+        </div>
         <div
           style={{ ...styles.card, cursor: 'not-allowed', opacity: 0.6 }}
           onClick={handleComingSoonClick}>
