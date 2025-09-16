@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div style={styles.container}>
       {/* <Quotes /> */}
-      <h1 style={styles.heading}>Free Online Tools</h1>
+      <h1 style={styles.heading}>Free Online Tools for students </h1>
       <h2>Unlimited Downloads. No Watermarks.</h2>
       <div style={styles.cardContainer}>
         <div
