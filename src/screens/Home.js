@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import QR from '../components/QR';
 import ImageCompressor from '../screens/ImageCompressor'; // Adjust path as needed
+import Quotes from '../components/Quotes';
+import TextToSpeech from '../screens/TextToSpeech';
 
 const Home = () => {
   const [activeTool, setActiveTool] = useState(null);
@@ -11,6 +13,9 @@ const Home = () => {
 
   const handleImageCompressorClick = () => {
     setActiveTool('compressor');
+  };
+  const handleTextToSpeechClick = () => {
+    setActiveTool('tts');
   };
 
   const handleComingSoonClick = () => {
@@ -24,9 +29,13 @@ const Home = () => {
   if (activeTool === 'compressor') {
     return <ImageCompressor />;
   }
+  if (activeTool === 'tts') {
+    return <TextToSpeech />;
+  }
 
   return (
     <div style={styles.container}>
+      {/* <Quotes /> */}
       <h1 style={styles.heading}>Free Online Tools</h1>
       <h2>Unlimited Downloads. No Watermarks.</h2>
       <div style={styles.cardContainer}>
@@ -41,6 +50,14 @@ const Home = () => {
           onClick={handleImageCompressorClick}>
           <h2 style={styles.cardTitle}>Image Compressor</h2>
           <p style={styles.cardDesc}>Reduce image size in KB and download.</p>
+        </div>
+        <div
+          style={{ ...styles.card, cursor: 'pointer' }}
+          onClick={handleTextToSpeechClick}>
+          <h2 style={styles.cardTitle}>Text To Speech</h2>
+          <p style={styles.cardDesc}>
+            Convert any text into natural speech instantly
+          </p>
         </div>
         <div
           style={{ ...styles.card, cursor: 'not-allowed', opacity: 0.6 }}

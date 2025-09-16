@@ -14,6 +14,9 @@ const Footer = () => {
         <Link to="/image-compressor" style={styles.link}>
           Image Size in KB
         </Link>
+        <Link to="/text-to-speech" style={styles.link}>
+          Text To Speech
+        </Link>
       </nav>
       <div style={styles.copy}>© 2025 CompleteClarity Web Tools</div>
     </footer>
